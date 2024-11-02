@@ -4,10 +4,19 @@
 # Write a program that displays the number of names that are stored in the file.
 
 def count_file_lines():
-    ######################
-    # Add your code here #
-    ######################
-    print('In the count_file_lines function')
+    total = 0
+
+    try:
+        infile = open('names.txt', 'r')
+        for line in infile:
+            total += 1
+        infile.close()
+
+    except Exception as err:
+        print(err)
+    else:
+        print('In the count_file_lines function')
+        print(f'The are {total} names')
 
 
 
